@@ -11,4 +11,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dominio\Entidades\" />
+    <Folder Include="Dominio\Enuns\" />
+    <Folder Include="Dominio\Interfaces\" />
+    <Folder Include="Dominio\ModelViews\" />
+    <Folder Include="Dominio\Servicos\" />
+  </ItemGroup>
+
 </Project>
