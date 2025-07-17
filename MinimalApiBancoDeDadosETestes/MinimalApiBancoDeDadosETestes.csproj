@@ -8,11 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dominio\Entidades\" />
     <Folder Include="Dominio\Enuns\" />
     <Folder Include="Dominio\Interfaces\" />
     <Folder Include="Dominio\ModelViews\" />
