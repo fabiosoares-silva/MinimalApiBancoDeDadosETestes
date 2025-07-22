@@ -13,6 +13,20 @@ namespace MinimalApiBancoDeDadosETestes.Dominio.Servicos
         {
             _contexto = contexto;
         }
+
+        public Administrador? BuscaPorId(int id)
+        {
+            return _contexto.Admnistradores.Where(a => a.Id == id).FirstOrDefault();
+        }
+
+        public Administrador Incluir(Administrador administrador)
+        {
+            _contexto.Admnistradores.Add(administrador);
+            _contexto.SaveChanges();
+
+            return administrador;
+        }
+
         public Administrador? Login(LoginDTO loginDTO)
         {
             var adm = _contexto.Admnistradores.
@@ -22,9 +36,17 @@ namespace MinimalApiBancoDeDadosETestes.Dominio.Servicos
                        
         }
 
-        List<Administrador> IAdministradorServico.Login(LoginDTO loginDTO)
+        public List<Administrador> Todos(int? pagina)
         {
-            throw new NotImplementedException();
+            var query = _contexto.Admnistradores.AsQueryable();
+
+            int itensPorPagina = 10;
+
+            if (pagina != null)
+                query = query.Skip(((int)pagina - 1) * itensPorPagina).Take(itensPorPagina);
+
+            return query.ToList();  
         }
+       
     }
 }

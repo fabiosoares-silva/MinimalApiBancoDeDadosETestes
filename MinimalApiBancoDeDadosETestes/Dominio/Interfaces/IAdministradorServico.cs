@@ -5,6 +5,9 @@ namespace MinimalApiBancoDeDadosETestes.Dominio.Interfaces
 {
     public interface IAdministradorServico
     {
-        List<Administrador> Login(LoginDTO loginDTO);
+        Administrador? Login(LoginDTO loginDTO);
+        Administrador Incluir(Administrador administrador);
+        Administrador? BuscaPorId(int id);
+        List<Administrador> Todos(int? pagina);
     }
 }
