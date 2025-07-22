@@ -13,6 +13,7 @@ namespace MinimalApiBancoDeDadosETestes.Infraestrutura.Db
         }
 
         public DbSet<Administrador> Admnistradores { get; set; } = default!;
+        public DbSet<Veiculo> Veiculos { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,7 +29,7 @@ namespace MinimalApiBancoDeDadosETestes.Infraestrutura.Db
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var stringConexao = _configuracaoAppSettings.GetConnectionString("MySql")?.ToString();
+                var stringConexao = _configuracaoAppSettings.GetConnectionString("DefaultConnection")?.ToString();
 
                 if (!string.IsNullOrEmpty(stringConexao))
                 {

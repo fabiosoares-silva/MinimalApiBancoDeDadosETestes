@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Dominio\Enuns\" />
-    <Folder Include="Dominio\ModelViews\" />
   </ItemGroup>
 
 </Project>
