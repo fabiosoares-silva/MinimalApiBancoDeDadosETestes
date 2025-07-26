@@ -5,11 +5,11 @@ using MinimalApiBancoDeDadosETestes.Infraestrutura.Db;
 
 namespace MinimalApiBancoDeDadosETestes.Dominio.Servicos
 {
-    public class AdmnistradorServico : IAdministradorServico
+    public class AdministradorServico : IAdministradorServico
     {
         private readonly DbContexto _contexto;
 
-        public AdmnistradorServico(DbContexto contexto)
+        public AdministradorServico(DbContexto contexto)
         {
             _contexto = contexto;
         }

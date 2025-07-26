@@ -20,9 +20,9 @@ namespace MinimalApiBancoDeDadosETestes.Infraestrutura.Db
             modelBuilder.Entity<Administrador>().HasData(new Administrador
             {
                 Id = 1,
-                Email = "Administrador@teste.com",
+                Email = "administrador@teste.com",
                 Senha = "123456",
-                Perfil = "Admin"
+                Perfil = "Adm"
             });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -30,14 +30,14 @@ namespace MinimalApiBancoDeDadosETestes.Infraestrutura.Db
             if (!optionsBuilder.IsConfigured)
             {
                 var stringConexao = _configuracaoAppSettings.GetConnectionString("DefaultConnection")?.ToString();
-
                 if (!string.IsNullOrEmpty(stringConexao))
                 {
-                    optionsBuilder.UseMySql(stringConexao,
-                    ServerVersion.AutoDetect(stringConexao));
+                    optionsBuilder.UseMySql(
+                        stringConexao,
+                        ServerVersion.AutoDetect(stringConexao)
+                    );
                 }
             }
-            
         }
     }
 }
